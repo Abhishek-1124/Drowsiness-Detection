@@ -1,4 +1,7 @@
 streamlit==1.35.0
-tensorflow==2.15.0
-opencv-python==4.8.1.78
-numpy==1.24.3
+# Allow a compatible TensorFlow range so pip can select a wheel for the environment
+tensorflow>=2.11.0,<2.16.0
+# Use headless OpenCV for server environments (no GUI)
+opencv-python-headless==4.8.1.78
+# Keep numpy flexible to avoid strict conflicts
+numpy>=1.24.0,<1.26.0

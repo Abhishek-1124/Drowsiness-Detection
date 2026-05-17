@@ -1,6 +1,8 @@
 streamlit==1.35.0
-# Use TensorFlow CPU for maximum compatibility on local and server setups
-tensorflow-cpu>=2.11.0,<2.22.0
+# Use TensorFlow CPU 2.19 with Keras 3 (compatible with model file format)
+tensorflow-cpu==2.19.1
+# Keras 3 for modern model format support
+keras>=3.0.0,<4.0.0
 # Use headless OpenCV to avoid GUI dependency issues
 opencv-python-headless==4.8.1.78
 # Keep numpy flexible but compatible with the selected packages

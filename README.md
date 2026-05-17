@@ -17,22 +17,18 @@ It predicts whether a person is **Awake** or **Drowsy** from live webcam frames.
 
 ## Requirements
 
-- Python 3.9+ (recommended)
+- Python 3.10 or 3.11 (recommended)
 - Webcam access
 - Linux/macOS/Windows
 
-Python packages:
-- `streamlit`
-- `tensorflow`
-- `opencv-python`
-- `numpy`
+Python packages are managed in `requirements.txt`.
 
 ## Setup
 
 1. Create and activate a virtual environment.
 
 ```bash
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 ```
 
@@ -43,11 +39,14 @@ python -m venv .venv
 .venv\Scripts\Activate.ps1
 ```
 
-2. Install dependencies.
+2. Install dependencies from the repo requirements.
 
 ```bash
-pip install streamlit tensorflow opencv-python numpy
+pip install --upgrade pip
+pip install -r requirements.txt
 ```
+
+If you see errors about TensorFlow or package conflicts, use a fresh virtual environment and Python 3.10/3.11.
 
 ## Run the App
 
@@ -55,6 +54,12 @@ Run the eye-aware version:
 
 ```bash
 streamlit run app.py
+```
+
+If port 8501 is busy, use:
+
+```bash
+streamlit run app.py --server.port 8502
 ```
 
 Or run the basic version:

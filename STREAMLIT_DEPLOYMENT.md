@@ -13,19 +13,19 @@
 5. **Advanced settings** (if needed):
    - Python version: 3.10
    - Set any environment variables if needed
-6. **Click "Deploy"** - Done! 🎉
+6. **Click "Deploy"** - Done!
 
 **Result:** Your app will be live at: `https://<your-username>-drowsiness-detection.streamlit.app`
 
 **Pros:**
-- ✅ Free tier available
-- ✅ Auto-deploys on GitHub push
-- ✅ Custom domain support ($5/month)
-- ✅ Built-in HTTPS
+-  Free tier available
+-  Auto-deploys on GitHub push
+-  Custom domain support ($5/month)
+-  Built-in HTTPS
 
 **Cons:**
-- ❌ Limited compute resources (free tier)
-- ❌ No GPU (free tier)
+-  Limited compute resources (free tier)
+-  No GPU (free tier)
 
 ---
 
@@ -39,12 +39,12 @@
 
 1. **Build Docker image locally:**
 ```bash
-docker build -t drowsiness-detection:latest .
+docker build -t drowsiness-detection: latest.
 ```
 
 2. **Push to Google Container Registry:**
 ```bash
-docker tag drowsiness-detection:latest gcr.io/YOUR-PROJECT-ID/drowsiness-detection
+docker tag drowsiness-detection: latest gcr.io/YOUR-PROJECT-ID/drowsiness-detection
 docker push gcr.io/YOUR-PROJECT-ID/drowsiness-detection
 ```
 
@@ -62,13 +62,13 @@ gcloud run deploy drowsiness-detection \
 **Result:** App deployed at: `https://drowsiness-detection-xxxxx.run.app`
 
 **Pros:**
-- ✅ Generous free tier (2 million requests/month)
-- ✅ Auto-scales
-- ✅ Custom domains
+-  Generous free tier (2 million requests/month)
+-  Auto-scales
+-  Custom domains
 
 **Cons:**
-- ❌ Requires Docker
-- ❌ Cold starts ~30 seconds
+-  Requires Docker
+-  Cold starts ~30 seconds
 
 ---
 
@@ -111,7 +111,7 @@ After=network.target
 Type=simple
 User=ubuntu
 WorkingDirectory=/home/ubuntu/Drowsiness-Detection
-ExecStart=/usr/local/bin/streamlit run app.py --server.port 8501 --server.address 0.0.0.0
+ExecStart=/usr/local/bin/streamlit run app.py --server.port 8501 --server. address 0.0.0.0
 Restart=always
 RestartSec=10
 
@@ -146,8 +146,8 @@ sudo systemctl start streamlit
 4. **Deploy** - Done!
 
 **Pros:**
-- ✅ Free tier available
-- ✅ Simple GitHub integration
+-  Free tier available
+-  Simple GitHub integration
 
 ---
 
@@ -159,7 +159,7 @@ sudo systemctl start streamlit
 4. **Choose Python component**
 5. **Set commands:**
    - Build: `pip install -r requirements.txt`
-   - Run: `streamlit run app.py --server.port 8080 --server.address 0.0.0.0`
+   - Run: `streamlit run app.py --server. port 8080 --server.address 0.0.0.0`
 6. **Deploy**
 
 **Result:** `https://drowsiness-detection-xxxxx.ondigitalocean.app`
@@ -218,17 +218,17 @@ TF_CPP_MIN_LOG_LEVEL=2  # Suppress TensorFlow logs
 
 ## Troubleshooting
 
-### App won't start on cloud:
-- Check if port is 8501 or assigned port
+### App won't start on the cloud:
+- Check if the port is 8501 or the assigned port
 - Verify requirements.txt installs without errors
-- Check model file exists in repo
+- Check the model file exists in the repo
 
 ### Model loading fails:
 - Ensure `drowsiness_model.keras` is in repo root
 - Verify TensorFlow/Keras versions match
 
 ### Memory issues:
-- Upgrade to larger instance (t2.small, t3.medium)
+- Upgrade to a larger instance (t2.small, t3.medium)
 - Use model quantization or pruning
 
 ---
